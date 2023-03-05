@@ -1,0 +1,124 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6qpir7rn2imv"]
+
+[ext_resource type="Script" path="res://Objects/camera.gd" id="1_vbnr5"]
+[ext_resource type="PackedScene" uid="uid://de1owombtccdv" path="res://Objects/scroll_bg.tscn" id="2_hli0k"]
+[ext_resource type="Shader" path="res://Objects/camera.gdshader" id="3_01nwt"]
+[ext_resource type="Texture2D" uid="uid://b8an4klew1iu5" path="res://Assets/Background/Blue - Copy.png" id="4_tkmj5"]
+
+[sub_resource type="Animation" id="Animation_jbhin"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-601, -475)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pk28r"]
+resource_name = "Close"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-601, -900), Vector2(-601, -475), Vector2(-601, -500), Vector2(-601, -475), Vector2(-601, -485), Vector2(-601, -475)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_p0avv"]
+resource_name = "Open"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-601, -475), Vector2(-601, -1500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtns7"]
+_data = {
+"Close": SubResource("Animation_pk28r"),
+"Open": SubResource("Animation_p0avv"),
+"RESET": SubResource("Animation_jbhin")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmhth"]
+shader = ExtResource("3_01nwt")
+shader_parameter/enabled = true
+
+[node name="Camera" type="Camera2D"]
+zoom = Vector2(2, 2)
+script = ExtResource("1_vbnr5")
+
+[node name="ScrollBG" parent="." instance=ExtResource("2_hli0k")]
+position = Vector2(-456, -483)
+speed = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_vtns7")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_qmhth")
+offset_left = -601.0
+offset_top = -475.0
+offset_right = 551.0
+offset_bottom = 165.0
+texture = ExtResource("4_tkmj5")

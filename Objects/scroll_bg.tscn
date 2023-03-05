@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://de1owombtccdv"]
+
+[ext_resource type="Script" path="res://Objects/scroll_bg.gd" id="1_4n6qu"]
+[ext_resource type="Texture2D" uid="uid://b8an4klew1iu5" path="res://Assets/Background/Blue - Copy.png" id="1_rtbrq"]
+
+[node name="ScrollBG" type="Node2D"]
+script = ExtResource("1_4n6qu")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("1_rtbrq")
+offset = Vector2(576, 320)
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(0, -632)
+texture = ExtResource("1_rtbrq")
+offset = Vector2(576, 320)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 648)
