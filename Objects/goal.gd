@@ -23,7 +23,7 @@ func finish_level():
 	set_shining(false)
 	await(cam.close())
 	get_tree().change_scene_to_file("res://Levels/test_level.tscn")
-	
+
 func _on_player_interact(player):
 	if full: 
 		finish_level()
