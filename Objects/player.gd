@@ -9,6 +9,10 @@ const JUMP_VELOCITY = -400.0
 @onready var sfx_explosion = $SfxExplosion
 @onready var sfx_jump = $SfxJump
 
+@onready var cam = get_tree().get_first_node_in_group("camera")
+
+@export var current_level: String
+
 var on_ground := false
 
 var follower = self
@@ -93,3 +97,7 @@ func animate():
 	if !is_on_floor():
 		if velocity.y < 0: anim.play("Jump")
 		elif velocity.y > 0: anim.play("Fall")
+
+func die():
+	await(cam.close())
+	get_tree().change_scene_to_file(current_level)
