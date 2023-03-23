@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://clwf1l4n5y3ex"]
+
+[node name="Teleporter" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

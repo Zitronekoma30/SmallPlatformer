@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkr2mbfuibglq"]
+
+[ext_resource type="PackedScene" uid="uid://c6qpir7rn2imv" path="res://Objects/camera.tscn" id="1_d5kpe"]
+[ext_resource type="TileSet" uid="uid://ridpefl4jp4l" path="res://Resources/floor.tres" id="2_vgq8x"]
+[ext_resource type="PackedScene" uid="uid://cod1eotklsv2c" path="res://Objects/player.tscn" id="5_55ory"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_d5kpe")]
+player = NodePath("../Player")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_vgq8x")
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("5_55ory")]
+position = Vector2(79, 209)
+current_level = "res://Levels/level_1.tscn"
