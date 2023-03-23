@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -400.0
 
 @onready var anim = $AnimatedSprite2D
 @onready var part_dust = $ParticlesDust
+@onready var anim = $AnimationPlayer
 
 @onready var sfx_explosion = $SfxExplosion
 @onready var sfx_jump = $SfxJump

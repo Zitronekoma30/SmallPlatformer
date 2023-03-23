@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://2m6smb8ypw62"]
+[gd_scene load_steps=9 format=3 uid="uid://clbiof3844b1e"]
 
-[ext_resource type="PackedScene" uid="uid://c6qpir7rn2imv" path="res://Objects/camera.tscn" id="2_2ttt7"]
 [ext_resource type="Script" path="res://Levels/LevelMusic.gd" id="2_w4mgx"]
-[ext_resource type="PackedScene" uid="uid://cod1eotklsv2c" path="res://Objects/player.tscn" id="3_6kicu"]
+[ext_resource type="PackedScene" path="res://Objects/player.tscn" id="3_6kicu"]
 [ext_resource type="PackedScene" uid="uid://jmx8vaayg1a0" path="res://Objects/tiles.tscn" id="4_f7gbc"]
 [ext_resource type="AudioStream" uid="uid://c0e0mqegahlm1" path="res://Audio/Music/ChiptunePlat.wav" id="5_8kjpr"]
 [ext_resource type="TileSet" uid="uid://ridpefl4jp4l" path="res://Resources/floor.tres" id="5_ic2n7"]
@@ -17,9 +16,6 @@ stream = ExtResource("5_8kjpr")
 volume_db = -20.0
 autoplay = true
 script = ExtResource("2_w4mgx")
-
-[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_2ttt7")]
-player = NodePath("../Player")
 
 [node name="TileMap" parent="." instance=ExtResource("4_f7gbc")]
 tile_set = ExtResource("5_ic2n7")
