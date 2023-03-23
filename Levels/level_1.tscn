@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1wdkik5f4qgt"]
+[gd_scene load_steps=8 format=3 uid="uid://b1wdkik5f4qgt"]
 
 [ext_resource type="TileSet" uid="uid://ridpefl4jp4l" path="res://Resources/floor.tres" id="1_hnptj"]
 [ext_resource type="PackedScene" uid="uid://c6qpir7rn2imv" path="res://Objects/camera.tscn" id="1_sgil8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c53x0pmca51sb" path="res://Objects/death_box.tscn" id="4_o1ubu"]
 [ext_resource type="PackedScene" uid="uid://by3158gnf4lcc" path="res://Objects/goal.tscn" id="5_3ynem"]
 [ext_resource type="PackedScene" uid="uid://dhgx3yf83qfni" path="res://Objects/fruit.tscn" id="6_gse2l"]
+[ext_resource type="PackedScene" uid="uid://clwf1l4n5y3ex" path="res://Objects/teleporter.tscn" id="7_p6rns"]
 
 [node name="Level1" type="Node2D"]
 
@@ -34,6 +35,13 @@ position = Vector2(1240, 192)
 [node name="Fruit3" parent="." instance=ExtResource("6_gse2l")]
 position = Vector2(343, 400)
 
+[node name="Teleporter" parent="." node_paths=PackedStringArray("destination") instance=ExtResource("7_p6rns")]
+position = Vector2(193, 214)
+destination = NodePath("../Marker2D")
+
 [node name="Player" parent="." instance=ExtResource("3_vjdkm")]
 position = Vector2(79, 209)
 current_level = "res://Levels/level_1.tscn"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(807, 177)
