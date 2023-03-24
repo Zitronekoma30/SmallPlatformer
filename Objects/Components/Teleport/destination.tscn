@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bhm7fbn38hghl"]
+[gd_scene load_steps=2 format=3 uid="uid://bhm7fbn38hghl"]
+
+[ext_resource type="Texture2D" uid="uid://du7todfgkbvu3" path="res://Assets/Items/blackhole_part.png" id="1_frlb2"]
 
 [node name="Destination" type="Marker2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+lifetime = 5.0
+texture = ExtResource("1_frlb2")
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 1.0
+orbit_velocity_max = 3.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
