@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2au6kobefclq"]
+[gd_scene load_steps=7 format=3 uid="uid://b1xi5rrjo7wpd"]
 
 [ext_resource type="TileSet" uid="uid://ridpefl4jp4l" path="res://Resources/floor.tres" id="1_hnptj"]
-[ext_resource type="PackedScene" path="res://Objects/camera.tscn" id="1_sgil8"]
-[ext_resource type="PackedScene" path="res://Objects/player.tscn" id="3_vjdkm"]
-[ext_resource type="PackedScene" uid="uid://c53x0pmca51sb" path="res://Objects/death_box.tscn" id="4_o1ubu"]
+[ext_resource type="PackedScene" uid="uid://c6qpir7rn2imv" path="res://Objects/camera.tscn" id="1_sgil8"]
+[ext_resource type="PackedScene" uid="uid://cod1eotklsv2c" path="res://Objects/player.tscn" id="3_vjdkm"]
+[ext_resource type="PackedScene" path="res://Objects/death_box.tscn" id="4_o1ubu"]
 [ext_resource type="PackedScene" uid="uid://by3158gnf4lcc" path="res://Objects/goal.tscn" id="5_3ynem"]
 [ext_resource type="PackedScene" uid="uid://dhgx3yf83qfni" path="res://Objects/fruit.tscn" id="6_gse2l"]
 

@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://clbiof3844b1e"]
+[gd_scene load_steps=9 format=3 uid="uid://2m6smb8ypw62"]
 
 [ext_resource type="Script" path="res://Levels/LevelMusic.gd" id="2_w4mgx"]
-[ext_resource type="PackedScene" path="res://Objects/player.tscn" id="3_6kicu"]
-[ext_resource type="PackedScene" uid="uid://jmx8vaayg1a0" path="res://Objects/tiles.tscn" id="4_f7gbc"]
+[ext_resource type="PackedScene" uid="uid://cod1eotklsv2c" path="res://Objects/player.tscn" id="3_6kicu"]
+[ext_resource type="PackedScene" path="res://Objects/tiles.tscn" id="4_f7gbc"]
 [ext_resource type="AudioStream" uid="uid://c0e0mqegahlm1" path="res://Audio/Music/ChiptunePlat.wav" id="5_8kjpr"]
 [ext_resource type="TileSet" uid="uid://ridpefl4jp4l" path="res://Resources/floor.tres" id="5_ic2n7"]
 [ext_resource type="PackedScene" uid="uid://dhgx3yf83qfni" path="res://Objects/fruit.tscn" id="6_usisq"]
 [ext_resource type="PackedScene" uid="uid://by3158gnf4lcc" path="res://Objects/goal.tscn" id="8_8hr4w"]
-[ext_resource type="PackedScene" uid="uid://c53x0pmca51sb" path="res://Objects/death_box.tscn" id="9_jlkcc"]
+[ext_resource type="PackedScene" path="res://Objects/death_box.tscn" id="9_jlkcc"]
 
 [node name="TestLevel" type="Node2D"]
 
