@@ -6,7 +6,7 @@ extends Area2D
 @onready var cam = get_tree().get_first_node_in_group("camera")
 @onready var sprite = $AnimatedSprite2D
 #@export var next_level: PackedScene
-
+@export var next_level: String
 @export var fruit_needs: int = 3
 var fruit_has: int = 0
 
@@ -22,8 +22,8 @@ func unlock():
 func finish_level():
 	set_shining(false)
 	await(cam.close())
-	get_tree().change_scene_to_file("res://Levels/test_level.tscn")
-	
+	get_tree().change_scene_to_file(next_level)
+
 func _on_player_interact(player):
 	if full: 
 		finish_level()
