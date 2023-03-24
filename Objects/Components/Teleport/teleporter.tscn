@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://clwf1l4n5y3ex"]
+[gd_scene load_steps=5 format=3 uid="uid://clwf1l4n5y3ex"]
 
 [ext_resource type="Texture2D" uid="uid://btx0ngruc8emc" path="res://Assets/Items/blackhole.png" id="1_b0w0c"]
 [ext_resource type="Script" path="res://Objects/teleporter.gd" id="1_y0cqr"]
+[ext_resource type="Texture2D" uid="uid://du7todfgkbvu3" path="res://Assets/Items/blackhole_part.png" id="2_ybdj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egyi6"]
 size = Vector2(28, 29)
@@ -11,6 +12,20 @@ script = ExtResource("1_y0cqr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_egyi6")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+lifetime = 5.0
+texture = ExtResource("2_ybdj5")
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 1.0
+orbit_velocity_max = 3.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_b0w0c")
