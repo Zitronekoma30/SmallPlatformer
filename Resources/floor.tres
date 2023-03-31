@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://ridpefl4jp4l"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ridpefl4jp4l"]
 
 [ext_resource type="Texture2D" uid="uid://ddxwub6pihg8n" path="res://Assets/Terrain/Terrain (16x16).png" id="1_7j47h"]
+[ext_resource type="PackedScene" uid="uid://6466y2idstlo" path="res://Objects/spike.tscn" id="2_fm5nn"]
 [ext_resource type="Texture2D" uid="uid://b7vjf8g76pj11" path="res://Assets/Background/Blue.png" id="2_o2ymk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15cg1"]
@@ -723,6 +724,9 @@ texture = ExtResource("1_7j47h")
 24:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1be06"]
+scenes/1/scene = ExtResource("2_fm5nn")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ql2a"]
 texture = ExtResource("2_o2ymk")
 0:0/0 = 0
@@ -786,3 +790,4 @@ terrain_set_0/terrain_2/name = "stone"
 terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_15cg1")
 sources/2 = SubResource("TileSetAtlasSource_0ql2a")
+sources/1 = SubResource("TileSetScenesCollectionSource_1be06")
