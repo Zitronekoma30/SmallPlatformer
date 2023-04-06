@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://6466y2idstlo"]
+[gd_scene load_steps=4 format=3 uid="uid://6466y2idstlo"]
 
 [ext_resource type="Texture2D" uid="uid://x6wr4cvpyd3v" path="res://Assets/Terrain/Traps/Spikes/Idle.png" id="1_ginh7"]
+[ext_resource type="PackedScene" uid="uid://c53x0pmca51sb" path="res://Objects/death_box.tscn" id="2_lswj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_loow4"]
 size = Vector2(15, 8)
@@ -13,3 +14,7 @@ shape = SubResource("RectangleShape2D_loow4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ginh7")
+
+[node name="DeathBox" parent="." instance=ExtResource("2_lswj0")]
+position = Vector2(0, 5)
+scale = Vector2(0.748392, 0.346092)

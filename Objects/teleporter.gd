@@ -11,7 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	sprite.rotation += 0.1
+	sprite.rotation += 0.3
 
 func teleport(player: CharacterBody2D) -> void:
 	player.global_position = destination.global_position
