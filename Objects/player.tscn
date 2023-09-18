@@ -375,6 +375,7 @@ _data = {
 z_index = 10
 collision_mask = 2
 script = ExtResource("1_vc07f")
+current_level = null
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

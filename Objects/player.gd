@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 150
 const JUMP_VELOCITY = -400.0
+var GRAPPLE_SPEED = 500
 
 @onready var anim = $AnimatedSprite2D
 @onready var part_dust = $ParticlesDust
@@ -19,6 +20,8 @@ var on_ground := false
 var follower = self
 var fruits: int = 0
 
+var grapplePoint: Node2D = null
+
 signal interact
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -34,9 +37,23 @@ func _process(delta):
 func handle_input():
 	if Input.is_action_just_pressed("interact"):
 		emit_signal("interact", self)
+	if Input.is_action_just_pressed("place"):
+		var grapple = load("res://Objects/grapple_point.tscn").instantiate()
+		grapple.global_position = get_global_mouse_position()
+		grapplePoint = grapple
 
 func _physics_process(delta):
-	# Add the gravity.
+	if grapplePoint != null:
+		#grapple logic
+		velocity = grapplePoint.global_position - global_position
+		if velocity.length() < 10: 
+			grapplePoint.queue_free()
+			grapplePoint = null
+			velocity = velocity.normalized() * GRAPPLE_SPEED
+		velocity = velocity.normalized() * GRAPPLE_SPEED
+		move_and_slide()
+		return
+
 	if not is_on_floor():
 		on_ground=false
 		velocity.y += gravity * delta
@@ -58,9 +75,9 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if on_ground: velocity.x = move_toward(velocity.x, 0, SPEED)
+		else: velocity.x = move_toward(velocity.x, 0, 5)
 	animate()
-
 	move_and_slide()
 
 func remove_follower() -> Node2D:

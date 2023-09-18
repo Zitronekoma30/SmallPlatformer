@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://mc6ttw7sy1kq"]
+
+[ext_resource type="Texture2D" uid="uid://b4cfa084v3wej" path="res://Assets/Items/Checkpoints/Checkpoint/Checkpoint (No Flag).png" id="1_ecpka"]
+
+[node name="grapple_point" type="Marker2D" groups=["grapple_points"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(19, -33)
+scale = Vector2(2.42188, 2.6875)
+texture = ExtResource("1_ecpka")
